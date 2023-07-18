@@ -1,0 +1,2 @@
+#To ignore all build files, and for keeping this out folder in the git repo
+build/*
