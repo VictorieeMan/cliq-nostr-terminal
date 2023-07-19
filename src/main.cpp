@@ -1,7 +1,7 @@
 #include <iostream>
-//#include <libwebsockets.h>
+#include <libwebsockets.h>
 
 int main(int argc, char* argv[]) {
-	std::cout << "Hello world" << std::endl;
+	std::cout << "Hello libwebsockets!" << std::endl;
 	return 0;
 }

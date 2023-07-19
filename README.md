@@ -6,8 +6,13 @@ git clone https://github.com/VictorieeMan/cliq-nostr-terminal.git
 ```
 
 ## Dependencies
-- OpenSSL 3.1.1 or higher. Download sources:
-  - https://www.openssl.org/source/
-  - https://github.com/openssl/openssl
-  - For an Windows installer of OpenSSL https://slproweb.com/products/Win32OpenSSL.html
-- 
+
+- [libwebsockets](https://libwebsockets.org/) minimum [v4.3.2]()
+  - Install instructions: https://libwebsockets.org/lws-api-doc-v4.3-stable/html/md_READMEs_README_build.html
+  - Using vcpkg: `vcpkg install libwebsockets`
+  <!-- - Remember to customize CMake to inform the linker where to find the library.
+  ```CMake
+  # Including external libraries
+  find_package(libwebsockets CONFIG REQUIRED)
+  target_link_libraries(Cliq PRIVATE websockets_shared)
+  ``` -->
