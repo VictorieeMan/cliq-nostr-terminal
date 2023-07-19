@@ -22,7 +22,9 @@ std::string_view set_debug_url(int url_setting) {
 	}
 }
 
-int main() {
+
+
+int main(int argc, char* argv[]) {
 	RELAY_URL = set_debug_url(0);
 	return 0;
 }
