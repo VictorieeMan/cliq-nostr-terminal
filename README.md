@@ -31,3 +31,8 @@ cd vcpkg;
 vcpkg install libwebsockets
 vcpkg install simdjson
 ```
+
+# Nostr resources
+- https://github.com/nostr-protocol/nips
+- https://github.com/aljazceru/awesome-nostr
+- https://gateway.nostr.com/e/43dfa3b174bc7a5e8145d12e393be34107ead39a1565518cd2a4691e8557352b
