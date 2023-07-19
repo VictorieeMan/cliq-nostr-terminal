@@ -114,5 +114,7 @@ int main() {
 		std::cout << "WebSocket context set up successfully\n";
 	}
 
+	int dummy = 0;
+	std::cin >> dummy;
 	return 0;
 }
