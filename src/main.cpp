@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 // External libraries
 #include <simdjson.h>
@@ -15,7 +16,7 @@ int handle_event(void* user_data, const char* event, size_t len) {
 	simdjson::dom::element event_data = parser.parse(event, len);
 
 	// Access the fields of the event data
-	std::string field1 = event_data["field1"];
+	std::string field1 = event_data["field1"].get_string();
 	int field2 = event_data["field2"];
 
 	// Do something with the event data
