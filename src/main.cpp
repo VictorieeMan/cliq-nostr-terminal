@@ -10,22 +10,22 @@
 //	return 0;
 //}
 
-//int handle_event(void* user_data, const char* event, size_t len) {
-//	// Parse the event JSON using simdjson
-//	simdjson::dom::parser parser;
-//	simdjson::dom::element event_data = parser.parse(event, len);
-//
-//	// Access the fields of the event data
-//	std::string_view field1 = event_data["field1"];
-//	int field2 = event_data["field2"];
-//
-//	// Do something with the event data
-//	std::cout << "Received NOSTR event:\n";
-//	std::cout << "Field 1: " << field1 << "\n";
-//	std::cout << "Field 2: " << field2 << "\n";
-//
-//	return 0;
-//}
+int nostr_event_parser(void* user_data, const char* event, size_t len) {
+	// Parse the event JSON using simdjson
+	simdjson::dom::parser parser;
+	simdjson::dom::element event_data = parser.parse(event, len);
+
+	// Access the fields of the event data
+	std::string_view field1 = event_data["field1"];
+	int field2 = event_data["field2"];
+
+	// Do something with the event data
+	std::cout << "Received NOSTR event:\n";
+	std::cout << "Field 1: " << field1 << "\n";
+	std::cout << "Field 2: " << field2 << "\n";
+
+	return 0;
+}
 
 int handle_event(struct lws* wsi, enum lws_callback_reasons reason, void* user, void* in, size_t len) {
 	switch (reason) {
@@ -64,7 +64,7 @@ int setup_websocket_context() {
 	struct lws_protocols protocols[] = {
 		{
 			// Name of the protocol
-			"nostrevent",
+			"nostr",
 			// Callback function for handling events
 			handle_event,
 			// Size of the per-session data
@@ -94,10 +94,12 @@ int setup_websocket_context() {
 
 	// Run the libwebsocket event loop
 	while (true) {
+		std::cout << "Running event loop\n";
 		lws_service(context, /* timeout_ms = */ 50);
 		// Add additional logic or break condition as needed
 		break;
 	}
+	std::cout << "Event loop finished\n";
 
 	// Clean up resources
 	lws_context_destroy(context);
