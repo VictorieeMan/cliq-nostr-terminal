@@ -16,3 +16,18 @@ git clone https://github.com/VictorieeMan/cliq-nostr-terminal.git
   find_package(libwebsockets CONFIG REQUIRED)
   target_link_libraries(Cliq PRIVATE websockets_shared)
   ``` -->
+- [simdjson](https://github.com/simdjson/simdjson) minimum [v3.2.1](https://github.com/simdjson/simdjson/releases/tag/v3.2.1)
+
+## Windows
+Install vcpkg and the dependencies using the following commands:
+```
+git clone https://github.com/microsoft/vcpkg.git;
+cd vcpkg;
+./bootstrap-vcpkg.sh;
+./vcpkg integrate install
+```
+
+```
+vcpkg install libwebsockets
+vcpkg install simdjson
+```
