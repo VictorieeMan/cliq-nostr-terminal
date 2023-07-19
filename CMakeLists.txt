@@ -5,7 +5,7 @@ project(cliq)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Cliq ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+add_executable(Cliq ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp )
 #include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Including external libraries
